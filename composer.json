@@ -1,0 +1,16 @@
+{
+  "name": "drupal/queenslaw_immigrationdiploma",
+  "description": "A custom theme developed for the Queen's University Faculty of Law Certificate website by Purely Interactive.",
+  "type": "drupal-custom-theme",
+  "homepage": "http://immigrationdiploma.queenslaw.ca/",
+  "authors": [
+    {
+      "name": "Matthew Fair",
+      "email": "matthew.fair@queensu.ca",
+      "role": "Maintainer"
+    }
+  ],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": { }
+}

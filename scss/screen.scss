@@ -1,0 +1,233 @@
+$one-third: 33.33333333%;
+$two-thirds: 66.66666667%;
+$bold-font-weight: 600;
+$white: #fff;
+$dark-grey: #333;
+$red: #9d1939;
+$blue: #11335d;
+$yellow: #eebd31;
+$default-block-padding: 0 20px;
+$min-width: 960px;
+
+@mixin border-radius($border-radius) {
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+@mixin clearfix() {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+body.page-learn-more div.content-container {
+  max-width: 100%;
+  padding: 0;
+  #main {
+  padding: 0;
+  }
+}
+
+body.queenslaw-sub-site #header {
+  background-color: $blue;
+  .menu-item--statement {
+    display: none;
+  }
+}
+
+body.has-queenslaw-alternate-teasers #main .queenslaw-teasers .teaser.has-teaser-image > .content {
+  background-color: rgba(0,0,0,0.03667);
+}
+
+body.has-queenslaw-alternate-teasers #main .queenslaw-teasers .teaser:nth-child(4) {
+  color: #000;
+  text-shadow: 0px 0px 6px white;
+  a {
+    color: #000;
+    text-shadow: 0px 0px 4px white;
+    display: none;
+  }
+}
+
+body.has-queenslaw-alternate-teasers #main .queenslaw-teasers .teaser:nth-child(5) {
+  background-color: #11335d;
+}
+
+body.has-queenslaw-alternate-teasers #main .queenslaw-teasers .teaser:nth-child(6) {
+  display: none;
+}
+
+body.has-queenslaw-alternate-teasers #main .queenslaw-teasers .teaser:nth-child(7) {
+  display: none;
+}
+
+#main .queenslaw-teasers .teaser:nth-child(4) ul.links.inline li.node-readmore a {
+  border-color: #000;
+}
+
+#main blockquote {
+  margin: 20px 220px 20px 60px;
+  .quote {
+    font-size: 1.1em;
+    &:before {
+      content: '\f10d';
+      font-family: FontAwesome;
+      position: relative;
+      bottom: 5px;
+      right: 5px;
+      font-size: 0.9em;
+    }
+    &:nth-last-child(2) {
+      
+      &:after {
+        content: '\f10e';
+        font-family: FontAwesome;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        font-size: 0.9em;
+      }  
+    }
+  }
+  .speaker {
+    font-size: 0.9em;
+    margin: 10px;
+    strong {
+      font-size: 1em;
+    }
+  }
+}
+
+
+.node--view-mode-detail .field--name-field-category {
+  .field__items * {
+    display: inline;
+  }
+  .field__item:after {
+    content: ',';
+  }
+  .field__item:last-child:after {
+    content: '';
+  }
+}
+body.front #main {
+  .node--view-mode-full {
+    .field {
+      margin-bottom: 0;
+    }
+  }
+  .queenslaw-alternate-teasers {
+    .teaser {
+      .queenslaw-teasers .views-row {
+        padding: 0;
+        width: auto;
+        .teaser-image,
+        footer .bundle,
+        footer .category {
+          display: none;
+        }
+        h4 {
+          margin: 8px 0 4px 0;
+          font-size: 1.25em;
+          a {
+            font-weight: $bold-font-weight;
+          }
+        }
+      }
+  .teaser.has-teaser-image > .content {
+    background-color: rgba(0, 0, 0, 0.03334);
+  }
+    }
+    .teaser:nth-child(3) {
+      background-color: $yellow;
+      float: right;
+      color: $dark_grey;
+      a {
+        color: $dark_grey;
+      }
+      ul.links.inline li.node-readmore a {
+        border-color: $dark_grey;
+      }
+    }
+    .teaser:nth-child(n+4) {
+      height: 400px;
+    }
+    .teaser:nth-child(4),
+    .teaser:nth-child(5) {
+      width: 50%;
+    }
+    .teaser:nth-child(7) {
+      float: right;
+    }
+/* Chrome doesn't seem to be able to do math correctly with one of the teasers floated
+   right, so add a background color to conceal that fact. */
+    background-color: $red;
+  }
+  .queenslaw-alternate-teasers:after {
+    @include clearfix();
+  }
+}
+#main .queenslaw-teasers,
+#supercontent .block-views-block-ctas-block,
+#supercontent .block-views-block-events-front-block,
+#main .block-views-block-speaker-events-front-block {
+  ul.links.inline {
+    margin-bottom: 0;
+    li.node-readmore a {
+      border-color: $white;
+    }
+    li.node-readmore a:before {
+      top: -5px;
+      left: 3px;
+    }
+  }
+}
+#sidebar .node--view-mode-detail {
+  .field--name-field-link a {
+    display: inline-block;
+    background-color: $red;
+    padding: 8px 24px;
+    line-height: 1;
+    text-decoration: none;
+    color: $white;
+    @include border-radius(4px);
+  }
+  .field--name-field-audio audio + a {
+    display: block;
+    margin-top: 12px;
+  }
+  .node__meta {
+    margin-bottom: 4px;
+    font-size: 0.875em;
+    * {
+      display: inline;
+    }
+    h3 {
+      display: block;
+    }
+    .field__item::before,
+    .field__item:first-of-type:before {
+      content: none;
+      margin-right: 0;
+    }
+  }
+}
+.block-mailinglist-alt {
+  margin-bottom: 48px;
+  padding: 0 20px;
+  form {
+    div {
+      display: inline-block;
+      margin: 16px 0 0 0;
+      div {
+        margin: 0 1em 0 0;
+      }
+    }
+    label {
+      display: none;
+    }
+  }
+}
