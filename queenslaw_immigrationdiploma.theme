@@ -6,7 +6,7 @@
  * Add a link to the landing page for node types for which a landing page is set (via the
  * queenslaw_certificate_misc module).
  */
-function queenslaw_certificate_preprocess_node(&$variables) {
+function queenslaw_immigrationdiploma_preprocess_node(&$variables) {
   $type = $variables['node']->getType();
   $view_mode = $variables['view_mode'];
   $variables['display_header'] = TRUE;
@@ -29,4 +29,12 @@ function queenslaw_certificate_preprocess_node(&$variables) {
       }
     }
   }
+}
+
+function queenslaw_immigrationdiploma_preprocess_block(&$variables) {
+  $theme_name_string = explode('/',$variables['directory'])[2];
+  $block_machine_name_string = $variables['elements']['#id'];
+  $corrected_block_machine_name_string = 'block-'.str_replace('--','-',str_replace('_','-',str_replace($theme_name_string.'_','',$block_machine_name_string)));
+  $variables['attributes']['class'][] = $corrected_block_machine_name_string;
+  $variables['attributes']['id'] = $corrected_block_machine_name_string;
 }
