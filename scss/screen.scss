@@ -231,3 +231,19 @@ body.front #main {
     }
   }
 }
+.block-mailinglist-alt {
+  margin-bottom: 48px;
+  padding: 0 20px;
+  form {
+    div {
+      display: inline-block;
+      margin: 16px 0 0 0;
+      div {
+        margin: 0 1em 0 0;
+      }
+    }
+    label {
+      display: none;
+    }
+  }
+}
